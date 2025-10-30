@@ -33,11 +33,14 @@ public enum RoomType {
         return maxPeoplePerRoom;
     }
 
-    public double finalDailyPrice(int addedPeople){
+    public boolean verifyAddedPeople(int addedPeople){
         if(addedPeople > (maxPeoplePerRoom - peoplePerRoom) || addedPeople < 0){
-            return -1.0;
+            return false;
         }
+        return true;
+    }
 
+    public double finalDailyPrice(int addedPeople){
         return dailyPrice + (addedPeople * extraCostPerPerson) ;
     }
 }
