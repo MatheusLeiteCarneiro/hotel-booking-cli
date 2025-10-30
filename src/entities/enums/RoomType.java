@@ -5,20 +5,20 @@ public enum RoomType {
     FAMILY(400.0,3,75.0,5),
     DELUXE(600.0,2,150.0,4);
 
-    private final Double dailyPrice;
+    private final Double pricePerNight;
     private final  Integer peoplePerRoom;
     private final Double extraCostPerPerson;
     private final Integer maxPeoplePerRoom;
 
-    RoomType(double dailyPrice, int peoplePerRoom, double extraCostPerPerson, int maxPeoplePerRoom) {
-    this.dailyPrice = dailyPrice;
+    RoomType(double pricePerNight, int peoplePerRoom, double extraCostPerPerson, int maxPeoplePerRoom) {
+    this.pricePerNight = pricePerNight;
     this.peoplePerRoom = peoplePerRoom;
     this.extraCostPerPerson = extraCostPerPerson;
     this.maxPeoplePerRoom = maxPeoplePerRoom;
     }
 
-    public Double getDailyPrice() {
-        return dailyPrice;
+    public Double getPricePerNight() {
+        return pricePerNight;
     }
 
     public Integer getPeoplePerRoom() {
@@ -41,6 +41,11 @@ public enum RoomType {
     }
 
     public double finalDailyPrice(int addedPeople){
-        return dailyPrice + (addedPeople * extraCostPerPerson) ;
+        return pricePerNight + (addedPeople * extraCostPerPerson) ;
+    }
+
+    @Override
+    public String toString() {
+        return "($" + String.format("%.2f",pricePerNight) + " per night for " + peoplePerRoom + " | +$" + String.format("%.2f",extraCostPerPerson) + " per extra person | Max occupancy " + maxPeoplePerRoom + ")\n";
     }
 }
