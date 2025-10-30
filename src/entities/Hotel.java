@@ -31,6 +31,13 @@ public class Hotel {
     public void removeReserve(Reserve newReserve){
         reserves.remove(newReserve);
     }
+    public double totalPayment(){
+        double sum = 0.0;
+        for(Reserve r : reserves){
+            sum += r.totalValue();
+        }
+        return sum;
+    }
 
 
 }
