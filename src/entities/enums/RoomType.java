@@ -1,9 +1,9 @@
 package entities.enums;
 
 public enum RoomType {
-    STANDART(250.0,2,50.0,3),
+    STANDARD(250.0,2,50.0,3),
     FAMILY(400.0,3,75.0,5),
-    DELUXE(600.0,2,125.0,4);
+    DELUXE(600.0,2,150.0,4);
 
     private final Double dailyPrice;
     private final  Integer peoplePerRoom;

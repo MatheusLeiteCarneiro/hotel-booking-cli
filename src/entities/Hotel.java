@@ -14,7 +14,7 @@ public class Hotel {
     }
     public void loadRooms(){
         for (int i = 0; i <= 10; i++){
-            rooms.add(new Room((100+i), RoomType.STANDART));
+            rooms.add(new Room((100+i), RoomType.STANDARD));
         }
         for (int i = 0; i <= 10; i++){
             rooms.add(new Room((200+i), RoomType.FAMILY));
