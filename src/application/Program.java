@@ -32,9 +32,9 @@ public class Program {
         while (yesOrNo != 0) {
             Reserve reserve = new Reserve(guest);
             System.out.println("Now choose what type of room you want:\nType:");
-            System.out.print("1- Standard Room " + RoomType.STANDARD);
-            System.out.print("2- Family Room " + RoomType.FAMILY);
-            System.out.print("3- Deluxe Room " + RoomType.DELUXE);
+            System.out.print("1- " + RoomType.STANDARD);
+            System.out.print("2- " + RoomType.FAMILY);
+            System.out.print("3- " + RoomType.DELUXE);
             int roomTypeNumber = sc.nextInt();
             while (RoomType.defineRoomType(roomTypeNumber) == null) {
                 System.out.print("Invalid room type, digit(1, 2 or 3):");
@@ -102,7 +102,7 @@ public class Program {
             }
             reserve.setRoom(new Room(roomNumber, roomTypeNumber));
 
-            System.out.printf("%nThe total price is: $%.2f%n", reserve.totalValue());
+            System.out.printf("%nThe price is: $%.2f%n", reserve.totalValue());
             System.out.println("Do you want to confirm the reserve?");
             System.out.print("(Type 1-to confirm 0-to cancel): ");
 
