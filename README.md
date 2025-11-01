@@ -44,11 +44,11 @@ This was a complex project that solidified several advanced concepts:
     * `Reserve` "has-a" `Room` and "has-a" `Guest`.
     * This design follows the "Information Expert" principle, where the `Hotel` class acts as the central controller.
 * **"Smart" Enums:**
-    * Implemented `RoomType` as an enum with its own constructor, attributes (`price`, `capacity`), and methods (`getFromOption`, `finalDailyPrice`).
+    * Implemented `RoomType` as an enum with its own constructor, attributes (`price`, `capacity`), and methods (`defineRoomType`, `finalDailyPrice`).
     * This encapsulates all business rules (pricing, capacity) *within* the enum, keeping other classes clean.
 * **Java Date-Time API:**
     * Mastered the use of `LocalDate` for handling check-in and check-out dates.
-    * Implemented the `ChronoUnit.DAYS.between(start, end)` method to accurately calculate the number of nights (pernoites), correctly handling the "check-out day exclusion".
+    * Implemented the `ChronoUnit.DAYS.between(start, end)` method to accurately calculate the number of nights, correctly handling the "check-out day exclusion".
 * **Algorithm Design (Availability Check):**
     * The most challenging part was designing the `availableRoomList` method.
     * This involved iterating through two separate lists and implementing a date overlap algorithm: `(newEnd.isBefore(oldStart) || newStart.isAfter(oldEnd))`.
