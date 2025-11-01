@@ -4,15 +4,18 @@ import entities.enums.RoomType;
 
 public class Room {
     private Integer number;
+    private Integer typeNumber;
     private RoomType type;
 
     public Room() {
     }
 
-    public Room(Integer number, RoomType type) {
+    public Room(Integer number, Integer typeNumber) {
         this.number = number;
-        this.type = type;
+        this.typeNumber = typeNumber;
+        type = RoomType.defineRoomType(typeNumber);
     }
+
 
     public Integer getNumber() {
         return number;
