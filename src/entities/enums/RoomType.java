@@ -55,19 +55,22 @@ public enum RoomType {
         return maxPeoplePerRoom;
     }
 
-    public boolean verifyAddedPeople(int addedPeople){
-        if(addedPeople > (maxPeoplePerRoom - peoplePerRoom) || addedPeople < 0){
-            return false;
+
+    public Integer verifyAddedPeople(int addedPeople) {
+        if (addedPeople > (maxPeoplePerRoom - peoplePerRoom) || addedPeople < 0) {
+            return maxPeoplePerRoom - peoplePerRoom;
         }
-        return true;
+        return null;
     }
 
     public double finalDailyPrice(int addedPeople){
         return pricePerNight + (addedPeople * extraCostPerPerson) ;
     }
 
+
     @Override
     public String toString() {
-        return "($" + String.format("%.2f",pricePerNight) + " per night for " + peoplePerRoom + " | +$" + String.format("%.2f",extraCostPerPerson) + " per extra person | Max occupancy " + maxPeoplePerRoom + ")\n";
+
+        return name + " Room" + "($" + String.format("%.2f", pricePerNight) + " per night for " + peoplePerRoom + " | +$" + String.format("%.2f", extraCostPerPerson) + " per extra person | Max occupancy " + maxPeoplePerRoom + ")\n";
     }
 }
