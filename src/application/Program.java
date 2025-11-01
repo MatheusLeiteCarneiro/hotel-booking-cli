@@ -47,6 +47,9 @@ public class Program {
             while (!verifyYesOrNo(yesOrNo)) {
                 yesOrNo = sc.nextInt();
             }
+            if(yesOrNo == 0){
+                peopleToAdd = 0;
+            }
             if (yesOrNo == 1) {
                 System.out.print("Type how many people you want to add: ");
                 peopleToAdd = sc.nextInt();

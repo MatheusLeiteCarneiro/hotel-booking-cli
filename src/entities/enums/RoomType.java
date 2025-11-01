@@ -57,7 +57,7 @@ public enum RoomType {
 
 
     public Integer verifyAddedPeople(int addedPeople) {
-        if (addedPeople >= (maxPeoplePerRoom - peoplePerRoom) || addedPeople < 0) {
+        if (addedPeople > (maxPeoplePerRoom - peoplePerRoom) || addedPeople < 0) {
             return maxPeoplePerRoom - peoplePerRoom;
         }
         return null;
