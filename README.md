@@ -67,8 +67,8 @@ This was a complex project that solidified several advanced concepts:
     ```
     *(This will create a new folder named `hotel-reservation-cli` with all the project files.)*
  
-3. Open the project in your Java IDE.
-3.  Locate and run the `Program.java` file (under `src/application/Program.java`).
+4. Open the project in your Java IDE.
+5. Locate and run the `Program.java` file (under `src/application/Program.java`).
 
 ---
 
