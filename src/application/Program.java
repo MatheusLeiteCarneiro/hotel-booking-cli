@@ -7,10 +7,8 @@ import entities.Room;
 import entities.enums.RoomType;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
@@ -85,14 +83,17 @@ public class Program {
             System.out.println("\nAvailable " + RoomType.defineRoomType(roomTypeNumber).getName() + " rooms on this period:");
             List<Integer> availableRooomsNumberList = hotel.availableRoomList(checkInDate, checkOutDate, roomTypeNumber);
             if (availableRooomsNumberList.isEmpty()) {
-                System.out.println("There's no available room to this date");
+                System.out.println("There's no available room of this type to this date");
+                System.out.println("You will need to choose another room type or another date\n");
+                yesOrNo = 1;
 
             } else {
                 System.out.print("|");
                 for (int roomsNumber : availableRooomsNumberList) {
                     System.out.print(roomsNumber + "|");
                 }
-            }
+
+
             System.out.print("\nType the number of the room you want to book: ");
             int roomNumber = sc.nextInt();
             while (!hotel.verifyIfRoomIsAvailable(roomNumber, availableRooomsNumberList)) {
@@ -123,6 +124,7 @@ public class Program {
                 yesOrNo = sc.nextInt();
             }
             System.out.println();
+        }
         }
         System.out.println("Final data:\n");
         System.out.println(hotel);
